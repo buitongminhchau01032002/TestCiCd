@@ -18,5 +18,6 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Build Solution
         run: dotnet build
+        working-directory: ./scripts
       - name: Run test
         run: dotnet test
