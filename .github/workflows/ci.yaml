@@ -16,6 +16,6 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Build Solution
-        run: dotnet build TestCiCd
+        run: dotnet build ./TestCiCd.sln
       - name: Run test
         run: dotnet test
