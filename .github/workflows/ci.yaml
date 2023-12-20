@@ -4,8 +4,11 @@ on: push
 
 jobs:
   tests:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
     name: Unit Testing
-    runs-on: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
       - run: dotnet build
